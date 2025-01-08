@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Random Demonstration</title>
+</head>
+<body>
+    <h1>JavaScript Random Number Demonstration</h1>
+    <p>Open the browser console to see the output.</p>
+
+    <script>
+        console.log("=== JavaScript Math.random Demo ===");
+
+        // Random number between 0 (inclusive) and 1 (exclusive)
+        console.log("Math.random():", Math.random());
+
+        // Random integer between 1 and 10
+        const randomInt1To10 = Math.floor(Math.random() * 10) + 1;
+        console.log("Random integer between 1 and 10:", randomInt1To10);
+
+        // Random integer between a custom range (min and max, inclusive)
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        console.log("Random integer between 5 and 15:", getRandomInt(5, 15));
+
+        // Random floating-point number between 0 and 1
+        console.log("Random float between 0 and 1:", Math.random());
+
+        // Random floating-point number between a custom range
+        function getRandomFloat(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+        console.log("Random float between 1.5 and 5.5:", getRandomFloat(1.5, 5.5));
+
+        // Random boolean
+        const randomBool = Math.random() >= 0.5;
+        console.log("Random boolean (true/false):", randomBool);
+
+        // Random element from an array
+        const fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"];
+        const randomFruit = fruits[Math.floor(Math.random() * fruits.length)];
+        console.log("Random fruit:", randomFruit);
+
+        // Random color (hex code)
+        function getRandomColor() {
+            const hex = Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0");
+            return `#${hex}`;
+        }
+        console.log("Random color (hex):", getRandomColor());
+
+        // Shuffle an array (Fisher-Yates shuffle)
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+        const numbers = [1, 2, 3, 4, 5];
+        console.log("Original array:", numbers);
+        console.log("Shuffled array:", shuffleArray([...numbers])); // Use spread operator to avoid modifying the original array
+
+        console.log("=== End of Demo ===");
+    </script>
+</body>
+</html>
