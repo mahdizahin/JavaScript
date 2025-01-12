@@ -1,0 +1,1 @@
+const cg=(x,y)=>{return x*y};
