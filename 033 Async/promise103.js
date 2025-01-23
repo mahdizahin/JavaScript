@@ -46,7 +46,9 @@ function getCertified(){
 enroll()
     .then(progress)
     .then(getCertified)
-    .then((message) => console.log(message))
+    .then(function(value){
+        console.log(value);
+    })
     .catch(function(err){
         console.log(err);
     })
